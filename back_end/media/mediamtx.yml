@@ -1,0 +1,17 @@
+# Contoh konfigurasi MediaMTX sebagai proxy media server.
+# MediaMTX tidak bisa membaca protokol P2P V380 8800 secara langsung.
+# Gunakan ini untuk:
+# 1. kamera RTSP/ONVIF asli, atau
+# 2. output RTSP dari V380Decoder jika decoder berhasil menghasilkan frame.
+
+rtspAddress: :8555
+webrtcAddress: :8889
+hlsAddress: :8888
+
+paths:
+  entok:
+    # Ganti source ini sesuai upstream.
+    # Contoh V380Decoder:
+    # source: rtsp://127.0.0.1:8554/live
+    source: rtsp://127.0.0.1:8554/live
+    sourceOnDemand: yes

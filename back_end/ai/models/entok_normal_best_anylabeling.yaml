@@ -1,0 +1,12 @@
+type: yolo26
+name: entok-normal-best-640
+provider: Custom Entok
+display_name: Entok Eye Normal Best 640
+model_path: C:/project AI/deteksi_entok/back_end/ai/runs/train/entok_eye_normal_only_yolo26m-6/weights/best.onnx
+
+engine: ort
+conf_threshold: 0.25
+max_det: 300
+
+classes:
+  - normal

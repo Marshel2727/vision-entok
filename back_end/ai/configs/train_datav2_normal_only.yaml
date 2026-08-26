@@ -1,0 +1,15 @@
+# Training mata entok satu kelas dari dataset canonical datav2_ready.
+# Jalankan dari folder back_end:
+# .\venv\Scripts\python.exe ai\train.py --config ai\configs\train_datav2_normal_only.yaml
+
+model: yolo26m.pt
+data: ../dataset/training/datav2_ready/data.yaml
+expected_names: [normal]
+
+epochs: 150
+imgsz: 960
+batch: 5
+device: auto
+workers: 1
+patience: 30
+name: entok_eye_normal_only_datav2_960

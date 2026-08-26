@@ -1,0 +1,18 @@
+# Config training model deteksi penyakit mata entok.
+# Jalankan dari folder back_end:
+# python ai/train.py --config ai/configs/train_yolo26m.yaml
+
+model: yolo26m.pt
+data: data.yaml
+expected_names: [abnormal, normal]
+
+epochs: 150
+imgsz: 640
+batch: 11
+device: auto
+workers: 1
+patience: 20
+name: entok_eye_yolo26m_v4
+
+# Kalau yolo26m.pt tidak tersedia di environment kamu,
+# ganti sementara menjadi yolov8m.pt atau yolov8n.pt.
