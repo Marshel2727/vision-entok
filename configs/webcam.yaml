@@ -1,0 +1,14 @@
+# Config test deteksi dari kamera laptop.
+# Jalankan melalui scripts/run_desktop.cmd dan pilih sumber Webcam.
+
+model: ../src/entok_vision/models/entok_normal_abnormal.pt
+source_type: opencv
+source: 0
+conf: 0.50
+imgsz: 640
+# Gunakan GPU bila tersedia; otomatis fallback ke CPU untuk laptop tanpa GPU.
+device: auto
+window_name: Deteksi Mata Entok - Kamera Laptop
+show_fps: true
+show_window: true
+save_abnormal: false

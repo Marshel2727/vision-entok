@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "entok-vision"
+version = "0.2.0"
+description = "Aplikasi desktop lokal untuk deteksi kondisi mata entok."
+requires-python = ">=3.12"
+dependencies = [
+  "numpy==2.2.6",
+  "opencv-python==4.12.0.88",
+  "ultralytics==8.3.187",
+  "python-dotenv==1.1.1",
+  "PyYAML==6.0.2",
+  "Pillow==11.3.0",
+  "onvif-zeep==0.2.12",
+]
+
+[project.scripts]
+entok-vision = "entok_vision.desktop.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+addopts = "-q"

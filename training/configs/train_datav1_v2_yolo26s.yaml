@@ -1,0 +1,17 @@
+# Training dua kelas dari gabungan datav1 dan datav2.
+# datav1: 0=abnormal, 1=normal
+# datav2: 0=normal dipetakan menjadi target class 1 oleh builder dataset.
+# Jalankan dari root project:
+# .\scripts\train.ps1
+
+model: ../checkpoints/yolo26s.pt
+data: ../../data/training/datav1_v2_combined/data.yaml
+expected_names: [abnormal, normal]
+
+epochs: 150
+imgsz: 960
+batch: 8
+device: 0
+workers: 1
+patience: 0
+name: entok_eye_datav1_v2_yolo26s_960

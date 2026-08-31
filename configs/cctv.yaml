@@ -1,0 +1,40 @@
+# URL RTSP dibaca dari .env agar password tidak masuk source code.
+source_env: CCTV_RTSP_URL
+source_type: opencv
+
+# Model pertama menjadi model awal. Tekan M di GUI untuk berpindah model.
+model: ../src/entok_vision/models/entok_normal_abnormal.pt
+models:
+  - name: Normal + Abnormal
+    path: ../src/entok_vision/models/entok_normal_abnormal.pt
+  - name: Normal Only
+    path: ../src/entok_vision/models/entok_normal_only.pt
+  - name: Normal Only - Data v2 960
+    path: ../src/entok_vision/models/entok_normal_only_datav2_960.pt
+conf: 0.25
+imgsz: 960
+performance_preset: balanced
+target_fps: 20
+device: auto
+abnormal_label: abnormal
+
+window_name: Deteksi Mata Entok - CCTV
+window_width: 1600
+window_height: 900
+fullscreen: false
+retry_seconds: 5
+reconnect_delay: 1
+max_reconnect_attempts: 3
+
+# Kontrol fisik kamera VIGI melalui ONVIF. Kredensial menggunakan
+# ONVIF_USER/ONVIF_PASS, CCTV_USERNAME/CCTV_PASSWORD, atau URL RTSP.
+ptz_enabled: true
+onvif_port: 2020
+onvif_fallback_ports: [80]
+onvif_timeout_seconds: 5
+ptz_speed: 0.35
+ptz_hold_timeout_seconds: 1.0
+
+save_dir: ../artifacts/screenshots
+auto_screenshot: true
+auto_screenshot_interval_seconds: 4

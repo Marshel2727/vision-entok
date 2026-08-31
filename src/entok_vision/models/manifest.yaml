@@ -1,0 +1,15 @@
+version: 0.2.0
+models:
+- id: yolo26s-combined
+  file: entok_yolo26s_combined.pt
+  sha256: 28b85511fa8e03fba6f88c84aba298896941e2ed0e22478117504f0c4b7dafdf
+  evaluation_report: artifacts/evaluation/model_comparison.json
+- id: normal-abnormal
+  file: entok_normal_abnormal.pt
+  sha256: 80321d5d0cd586858895e001d85621bd39fa186f9769c1ded9616578f0f82ee0
+- id: normal-only
+  file: entok_normal_only.pt
+  sha256: fe48f636bf1c085d1f34ccc0f9324ecac8fcc056a0708cd5a847da2b673c6be9
+- id: normal-only-datav2-960
+  file: entok_normal_only_datav2_960.pt
+  sha256: 90cd5319d7d8694bc8183b2553a8268451fb8bd7dafc003bb99461bfb08318d0
